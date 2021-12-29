@@ -18,10 +18,8 @@ include("shared.lua")
 
 -- Called when the entity initializes.
 function ENT:Initialize()
-
-	self:SetModel("models/player/Kleiner.mdl")
+	self:SetModel(GetConVar("ph_prop_model"):GetString() or "models/player/Kleiner.mdl")
 	self.health = 100
-	
 end 
 
 

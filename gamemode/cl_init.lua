@@ -185,6 +185,12 @@ function SetBlind(um)
 end
 usermessage.Hook("SetBlind", SetBlind)
 
+-- hook.Add("HUDPaint", "DrawBlind", function()
+-- 	if not blind then return end
+-- 	surface.SetDrawColor(22, 22, 22)
+-- 	surface.DrawRect(0, 0, ScrW(), ScrH())
+-- end)
+
 
 -- Sets the player hull and the health status.
 function SetHull(um)

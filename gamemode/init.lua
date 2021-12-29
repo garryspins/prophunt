@@ -145,17 +145,16 @@ end
 -- Sets the player model
 function GM:PlayerSetModel(pl)
 
-	local player_model = "models/Gibs/Antlion_gib_small_3.mdl"
-	
+	local player_model = GetConVar("ph_prop_model"):GetString() or "models/player/Kleiner.mdl"
+
 	if pl:Team() == TEAM_HUNTERS then
-	
-		player_model = "models/player/combine_super_soldier.mdl"
-		
+		player_model = GetConVar("ph_hunter_model"):GetString() or "models/player/combine_super_soldier.mdl"
 	end
-	
+
 	util.PrecacheModel(player_model)
 	pl:SetModel(player_model)
-	
+
+	pl:SetModelScale((pl:Team() == TEAM_HUNTERS) and (GetConVar("ph_hunter_scale"):GetInt() or 1) or 1)
 end
 
 
